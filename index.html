@@ -29,7 +29,7 @@
             <div class="row">
               <div class="col">
                 <input type="number" id="timestamp" class="validate"
-                  v-model.number="datetimeModel.timestamp" @input="onSubmit('timestamp')">
+                  v-model.number="timestamp" @input="onSubmit">
               </div>
               <div class="col">
                 <p>seconds since Jan 01 1970 12:00am. (UTC)</p>
@@ -41,83 +41,13 @@
 
           <!-- utc time -->
           <div class="row">
-            <div class="input-field col s2">
-              <input type="text" id="datetimeModel.utcTimeObj.year" class="validate"
-                v-model="datetimeModel.utcTimeObj.year" @input="onSubmit('utc')">
-              <label class="active" for="datetimeModel.utcTimeObj.year">Year</label>
-            </div>
-
-            <div class="input-field col s2">
-              <input type="text" id="datetimeModel.utcTimeObj.month" class="validate"
-                v-model="datetimeModel.utcTimeObj.month" @input="onSubmit('utc')">
-              <label class="active" for="datetimeModel.utcTimeObj.month">Month</label>
-            </div>
-
-            <div class="input-field col s2">
-              <input type="text" id="datetimeModel.utcTimeObj.day" class="validate"
-                v-model="datetimeModel.utcTimeObj.day" @input="onSubmit('utc')">
-              <label class="active" for="datetimeModel.utcTimeObj.day">Day</label>
-            </div>
-
-            <div class="input-field col s2">
-              <input type="text" id="datetimeModel.utcTimeObj.hour" class="validate"
-                v-model="datetimeModel.utcTimeObj.hour" @input="onSubmit('utc')">
-              <label class="active" for="datetimeModel.utcTimeObj.hour">Hour</label>
-            </div>
-
-            <div class="input-field col s2">
-              <input type="text" id="datetimeModel.utcTimeObj.minute" class="validate"
-                v-model="datetimeModel.utcTimeObj.minute"
-                 @input="onSubmit('utc')">
-              <label class="active" for="datetimeModel.utcTimeObj.minute">Minute</label>
-            </div>
-
-            <div class="input-field col s2">
-              <input type="text" id="datetimeModel.utcTimeObj.second" class="validate"
-                v-model="datetimeModel.utcTimeObj.second"
-                 @input="onSubmit('utc')">
-               <label class="active" for="datetimeModel.utcTimeObj.second">Second</label>
-            </div>
+            <p>Current UTC time: {{utcTimeString}}</p>
           </div>
           <!-- utc time end -->
 
           <!-- local time -->
           <div class="row">
-            <div class="input-field col year-col">
-              <input type="text" id="datetimeModel.localTimeObj.year" class="validate"
-                v-model="datetimeModel.localTimeObj.year" @input="onSubmit('local')">
-              <label class="active" for="datetimeModel.localTimeObj.year">Year</label>
-            </div>
-
-            <div class="input-field col month-col">
-              <input type="text" id="datetimeModel.localTimeObj.month" class="validate"
-                v-model="datetimeModel.localTimeObj.month" @input="onSubmit('local')">
-              <label class="active" for="datetimeModel.localTimeObj.month">Month</label>
-            </div>
-
-            <div class="input-field col day-col">
-              <input type="text" id="datetimeModel.localTimeObj.day" class="validate"
-                v-model="datetimeModel.localTimeObj.day" @input="onSubmit('local')">
-              <label class="active" for="datetimeModel.localTimeObj.day">Day</label>
-            </div>
-
-            <div class="input-field col hour-col">
-              <input type="text" id="datetimeModel.localTimeObj.hour" class="validate"
-                v-model="datetimeModel.localTimeObj.hour" @input="onSubmit('local')">
-              <label class="active" for="datetimeModel.localTimeObj.hour">Hour</label>
-            </div>
-
-            <div class="input-field col minute-col">
-              <input type="text" id="datetimeModel.localTimeObj.minute" class="validate"
-                v-model="datetimeModel.localTimeObj.minute" @input="onSubmit('local')">
-              <label class="active" for="datetimeModel.localTimeObj.minute">Minute</label>
-            </div>
-
-            <div class="input-field col second-col">
-              <input type="text" id="datetimeModel.localTimeObj.second" class="validate"
-                v-model="datetimeModel.localTimeObj.second" @input="onSubmit('local')">
-               <label class="active" for="datetimeModel.localTimeObj.second">Second</label>
-            </div>
+            <p>Current local time: {{localTimeString}}</p>
           </div>
           <!-- local time end -->
 
