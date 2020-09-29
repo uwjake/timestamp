@@ -24,36 +24,26 @@
       <div class="row">
         <div class="col s12">
 
-          <!-- timestamp -->
           <div class="input-field">
             <div class="row">
               <div class="col">
-                <input type="number" id="timestamp" class="validate"
+                <input type="number" id="timestamp_input" ref="timestamp_input" class="validate"
                   v-model.number="timestamp" @input="onSubmit">
-              </div>
-              <div class="col">
-                <p>seconds since Jan 01 1970 12:00am. (UTC)</p>
               </div>
               </div>
             <label class="active" for="timestamp">Timestamp</label>
           </div>
-          <!-- timestamp end -->
 
-          <!-- utc time -->
           <div class="row">
-            <p>Current UTC time: {{utcTimeString}}</p>
+            <h3>UTC: {{utcTimeString}}</h3>
           </div>
-          <!-- utc time end -->
 
-          <!-- local time -->
           <div class="row">
-            <p>Current local time: {{localTimeString}}</p>
+            <h3>Local: {{localTimeString}}</h3>
           </div>
-          <!-- local time end -->
 
         </div>
       </div>
-
 
     </div>
   </main>
