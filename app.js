@@ -11,7 +11,7 @@ class MyDate extends Date {
   }
 
   getUTCMonth() {
-    return this.augmentNum(super.getUTCMonth())
+    return this.augmentNum(super.getUTCMonth()+1)
   }
 
   getUTCDate() {
