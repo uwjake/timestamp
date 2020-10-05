@@ -45,7 +45,7 @@ var app = new Vue({
       localTimeString: ""
     },
     mounted() {
-      M.AutoInit()
+      // M.AutoInit()
       this.onSubmit()
       const tsInputField = this.$refs["timestamp_input"]
       tsInputField.focus()
