@@ -27,10 +27,14 @@
           <div class="input-field">
             <div class="row">
               <div class="col">
-                <input type="number" id="timestamp_input" ref="timestamp_input" class="validate"
-                  v-model.number="timestamp" @input="onSubmit">
+                <input id="timestamp_input" ref="timestamp_input" class="validate"
+                  v-model.number="timestamp"/>
               </div>
+              <div class="col">
+                <a class="btn" @click="addOneDay">+</a>
+                <a class="btn" @click="subtractOneDay">-</a>
               </div>
+            </div>
             <label class="active" for="timestamp">Timestamp</label>
           </div>
 

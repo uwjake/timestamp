@@ -1,4 +1,4 @@
-const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 class MyDate extends Date {
   augmentNum(num) {
@@ -41,25 +41,33 @@ var app = new Vue({
     el: '#app',
     data: {
       timestamp: parseInt((new Date()).getTime() / 1000),
-      utcTimeString: "",
-      localTimeString: ""
     },
     mounted() {
-      // M.AutoInit()
-      this.onSubmit()
       const tsInputField = this.$refs["timestamp_input"]
       tsInputField.focus()
       tsInputField.select()
     },
     methods: {
-      onSubmit() {
-        let date = new MyDate(this.timestamp*1000)
-        this.utcTimeString = `${date.getUTCWeekDayName()}, ${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()},  
-        ${date.getUTCHoursInAmPm()}:${date.getUTCMinutes()}:${date.getUTCSeconds()} ${date.getUTCAmPm()}`
-
-        date = new MyDate(date.getTime() - date.getTimezoneOffset()*60*1000)
-        this.localTimeString = `${date.getUTCWeekDayName()}, ${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()},  
-        ${date.getUTCHoursInAmPm()}:${date.getUTCMinutes()}:${date.getUTCSeconds()} ${date.getUTCAmPm()} ${date.toTimeString().slice(9)}`
+      addOneDay() {
+        this.timestamp += 86400
+      },
+      subtractOneDay() {
+        this.timestamp -= 86400
       },
     },
+
+    computed: {
+      utcTimeString() {
+        const date = new MyDate(this.timestamp*1000)
+        return utcTimeString = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()}, 
+          ${date.getUTCHoursInAmPm()}:${date.getUTCMinutes()}:${date.getUTCSeconds()} ${date.getUTCAmPm()}, 
+          ${date.getUTCWeekDayName()}`
+      },
+      localTimeString() {
+        const date =  new MyDate(this.timestamp*1000 - new Date().getTimezoneOffset()*60*1000)
+        return localTimeString = `${date.getUTCFullYear()}-${date.getUTCMonth()}-${date.getUTCDate()},  
+          ${date.getUTCHoursInAmPm()}:${date.getUTCMinutes()}:${date.getUTCSeconds()} ${date.getUTCAmPm()}, 
+          ${date.getUTCWeekDayName()}, ${date.toTimeString().slice(9)}`
+      },
+    }
 })
